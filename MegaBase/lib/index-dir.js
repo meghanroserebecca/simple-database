@@ -4,18 +4,21 @@ function Db(directory){
     this.directory = directory;
 }
 
-Db.prototype.save = function(fileName, jsonObjectToSave, callbackFunction) {
+Db.prototype.save = function(directory, file, callBack) {
     //checkIfHas_id
+    file._id = simpleid();
     //ifYesExistsThrowError
-
+    var jsonFile = JSON.stringify(file);
    // ifNotThenCreateWith_id
-   fs.writeFile(cuteAnimals.txt, jsonObjectToSave.simpleid(), (err) => {
-       if (err) throw err;
-       process.stdout.write('It\s Saved!');
-   }).
+   fs.writeFile(cuteAnimals.txt, jsonObject, (err) => {
+       if (err) callBack(err);
+       else
+        process.stdout.write('It\s Saved!');
+   })
 }
 
-fs.writeFile('message.txt', 'Hello Node.js', (err) => {
-  if (err) throw err;
-  console.log('It\'s saved!');
-});
+module.exports = {
+    create: function(directory) {
+        return new Db(directory); 
+    }
+}
