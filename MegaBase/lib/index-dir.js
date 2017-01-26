@@ -1,24 +1,31 @@
+var fs = require('fs');
+var path = require('path');
 var simpleid = require('simpleid');
+const userDir = '..\\data\\';
 
 function Db(directory){
     this.directory = directory;
 }
 
-Db.prototype.save = function(directory, file, callBack) {
-    //checkIfHas_id
+Db.prototype.save = function(fileName, file, callBack) {
+    if (file._id) callBack({"error": "this file already exists!"});
     file._id = simpleid();
-    //ifYesExistsThrowError
     var jsonFile = JSON.stringify(file);
-   // ifNotThenCreateWith_id
-   fs.writeFile(cuteAnimals.txt, jsonObject, (err) => {
+    var filePath = userDir + fileName;
+    fs.writeFile(filePath, jsonFile, (err) => {
        if (err) callBack(err);
        else
         process.stdout.write('It\s Saved!');
    })
 }
 
-module.exports = {
-    create: function(directory) {
-        return new Db(directory); 
-    }
-}
+// module.exports = {
+//     create: function(directory) {
+//         return new Db(directory); 
+//     }
+// }
+function callback(msg) {
+    console.log(msg);
+} 
+
+Db.prototype.save('test2.txt', {"property": "fuck windows"}, callback);
