@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var simpleid = require('simpleid');
+var obj = require('../data/test2.txt');
 const userDir = '..\\data\\';
 
 function Db(directory){
@@ -8,7 +9,7 @@ function Db(directory){
 }
 
 Db.prototype.save = function(fileName, file, callBack) {
-    if (file._id) callBack({"error": "this file already exists!"});
+    if (file.hasOwnProperty('_id')) callBack({"error": "this file already exists!"});
     file._id = simpleid();
     var jsonFile = JSON.stringify(file);
     var filePath = userDir + fileName;
