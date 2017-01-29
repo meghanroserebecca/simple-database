@@ -3,10 +3,11 @@ var run = require('./run.js');
 var DB = require('../lib/get-dir-contents');
 
 describe('get directory contents', function(){
-  it('gets file contents by id', function{
-    getDirContents('../data/test2.txt', (err, result) => {
-      if(err) done(err);
-      assert.deepEqual(result, {"prop":"fuck windows","_id":"2RNE79B5YD8"});
+  it('gets file contents by id', function(done) {
+    var dataBase = DB.create('./data'); 
+    dataBase.getDirContents('test2.txt', "2RNE79B5YD8", (err, result) => {
+      if(err) return done(err);
+      assert.equal(result._id, "2RNE79B5YD8");
       done();
     });
   });
