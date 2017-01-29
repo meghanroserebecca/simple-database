@@ -14,7 +14,7 @@ Db.prototype.save = function(fileName, file, callBack) {
         var filePath = path.join(this.directory, fileName);
         fs.writeFile(filePath, jsonFile, (err) => {
             if (err) callBack(err);
-            else process.stdout.write('It\s Saved!');
+            else process.stdout.write('It\'s Saved!');
         })
     }
 }
