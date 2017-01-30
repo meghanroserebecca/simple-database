@@ -34,7 +34,7 @@ Db.prototype.getDirContentsById = function(fileName, fileId, callBack) {
     if(err) return callBack(err);
     var obj = JSON.parse(data);
     if (obj._id !== fileId) return callBack('id does not match file id')
-    callBack(null, data);
+    callBack(null, obj);
   });
 };
 

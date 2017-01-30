@@ -4,15 +4,14 @@ var DB = require('../lib/get-dir-contents');
 
 describe('get directory contents', function(){
   it('gets file contents by id', function(done) {
-    var dataBase = DB.create('./data'); 
-    dataBase.getDirContentsById('sloths.txt', "KJEA79B939D", (err, result) => {
+    var cuteAnimals = DB.create('data'); 
+    cuteAnimals.getDirContentsById('sloths.txt', "KJEA79B939D", (err, obj) => {
       if(err) return done(err);
-      assert.equal(result._id, "KJEA79B939D");
+      assert.equal(obj._id, "KJEA79B939D");
       done();
     });
   });
 });
 
-//the above test needs to see if we can return a database object by id number; 
-//second test: if id does not exists returns null
+//the above test is not functioning; mocha is returning Uncaught AssertionError: undefined == 'KJEA79B939D'
 
