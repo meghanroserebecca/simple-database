@@ -5,7 +5,9 @@ function Db(directory){
     this.directory = directory;
 }
 
-Db.prototype.getDirContents = function(fileName, fileId, callBack) {
+Db.prototype.getDirContents
+
+Db.prototype.getDirContentsById = function(fileName, fileId, callBack) {
   const filePath = path.join(this.directory, fileName);
   fs.readFile(filePath, (err, data) => {
     if(err) return callBack(err);
