@@ -5,9 +5,9 @@ var DB = require('../lib/get-dir-contents');
 describe('get directory contents', function(){
   it('gets file contents by id', function(done) {
     var dataBase = DB.create('./data'); 
-    dataBase.getDirContentsById('test2.txt', "2RNE79B5YD8", (err, result) => {
+    dataBase.getDirContentsById('sloths.txt', "KJEA79B939D", (err, result) => {
       if(err) return done(err);
-      assert.equal(result._id, "2RNE79B5YD8");
+      assert.equal(result._id, "KJEA79B939D");
       done();
     });
   });

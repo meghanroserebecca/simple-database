@@ -33,4 +33,6 @@ function callback(err, file) {
 } 
 
 var cuteAnimals = new Db('data');
-cuteAnimals.save('sloths.txt', {"name": "sloth", "cuteness": "x1000000"}, callback);
+// cuteAnimals.save('sloths.txt', {"name": "sloth", "cuteness": "x1000000"}, callback);
+// cuteAnimals.save('armadillos.txt', {"name": "armadillos", "cuteness": "x100"}, callback);
+// cuteAnimals.save('pygmy marmosets.txt', {"name": "pygmy marmosets", "cuteness": "infinite"}, callback);
