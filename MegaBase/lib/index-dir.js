@@ -6,6 +6,8 @@ function Db(directory){
     this.directory = directory;
 }
 
+
+
 Db.prototype.save = function(fileName, file, callBack) {
     if (file.hasOwnProperty('_id')) return callBack({"error": "this file already exists!"});
     else {
@@ -14,7 +16,7 @@ Db.prototype.save = function(fileName, file, callBack) {
         var filePath = path.join(this.directory, fileName);
         fs.writeFile(filePath, jsonFile, (err) => {
             if (err) callBack(err);
-            else process.stdout.write('It\'s Saved!');
+            callBack(null, file);
         })
     }
 }
@@ -25,8 +27,10 @@ module.exports = {
     }
 }
 
-function callback(msg) {
-    console.log(msg.error);
+function callback(err, file) {
+    if (err) return process.stdout.write(err.toString());
+    process.stdout.write(JSON.stringify(file) + ' It\'s Saved!');
 } 
 
-//Db.prototype.save('test2.txt', {"prop": "fuck windows", "_id": "123"}, callback);
+var cuteAnimals = new Db('data');
+cuteAnimals.save('sloths.txt', {"name": "sloth", "cuteness": "x1000000"}, callback);
