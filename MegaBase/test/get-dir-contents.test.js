@@ -13,8 +13,6 @@ describe('get directory contents', function() {
   });
 });
 
-//still need test for getAll
-
 describe('get directory contents', function() {
   it('gets all file contents', function(don) {
     var cuteAnimals = DB.create('data');
@@ -26,4 +24,4 @@ describe('get directory contents', function() {
   });
 });
 
-//this test is not working
+//the above test is not working

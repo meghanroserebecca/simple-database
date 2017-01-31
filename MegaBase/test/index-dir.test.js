@@ -11,7 +11,7 @@ describe('database', function() {
   });
   it('checks to see if new files save to database', function() {
     var doesItSave = db.save('lolCat.txt', {"name":"lolCat", "hasCheeseBurger?":"true", "isCute?":"yes"});
-    //readdir / readFile here to see if lolcat file has been made. 
+    //readdir / readFile here to see if lolcat file has been made. This secondary test incomplete.
   });
 });
 

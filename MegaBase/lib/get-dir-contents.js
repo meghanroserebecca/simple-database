@@ -52,6 +52,7 @@ module.exports = {
         return new Db(directory);
     }
 }
+
 var cuteAnimals = new Db('data');
 cuteAnimals.getAll('data', callback1);
 cuteAnimals.getDirContentsById('sloths.txt', "KJEA79B939D", callback2);
