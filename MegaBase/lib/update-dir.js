@@ -34,4 +34,5 @@ function callback(err, dataToAdd) {
 } 
 
 var cuteAnimals = new Db('data');
-cuteAnimals.update('sloths.txt', {"name":"sloth","cuteness":"x1000000","_id":"KJEA79B939D", "doesAaronLIke": "yes, definitely, absolutely"}, callback);
+
+//cuteAnimals.update('sloths.txt', {"name":"sloth","cuteness":"x1000000","_id":"KJEA79B939D", "doesAaronLIke": "yes, definitely, absolutely"}, callback);

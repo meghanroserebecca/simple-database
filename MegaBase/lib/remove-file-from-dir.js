@@ -41,4 +41,4 @@ module.exports = {
 }
 
 var cuteAnimals = new Db('data');
-cuteAnimals.remove('data', 'lolCat.txt',"RWAV79BW4QY", callback);
+//cuteAnimals.remove('data', 'lolCat.txt',"RWAV79BW4QY", callback);
