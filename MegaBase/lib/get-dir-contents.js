@@ -7,7 +7,6 @@ function Db(directory){
 }
 
 Db.prototype.getAll = function(directory, callBack) {
-    //readdir
     fs.readdir(directory, (err, files) => {
         if (err) return cb(err);
 
