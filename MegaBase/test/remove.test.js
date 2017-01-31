@@ -9,13 +9,14 @@ describe('removes a file from the directory', function() {
     cuteAnimals.remove('data', 'armadillos.txt', "DXA479BWD8W", (err, obj) => {
       if(err) return done(err);
       else {
-        const filePath = path.join('data', 'armadillos.txt');
-        fs.readFile(filePath, (err, data) => {
-          if(err) return done(err);
-          var obj = JSON.parse(data);
-          process.stdout.write(obj);
+        // const filePath = path.join('data', 'armadillos.txt');
+        // fs.readFile(filePath, (err, data) => {
+        //   if(err) return done(err);
+        //   var obj = JSON.parse(data);
+        //   process.stdout.write(obj);
           assert.equal(!obj, 'armadillos.txt');
-        });
+        // });
+        done();
       };
     });
   });

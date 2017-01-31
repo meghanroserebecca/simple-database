@@ -5,7 +5,7 @@ var DB = require('../lib/index-dir.js');
 describe('database', function() {
   var db = DB.create('data');
   it('checks to see if files already exist by ID', function() {
-    db.save('slohts.txt', {"name":"sloth","cuteness":"x1000000","_id":"KJEA79B939D"}, function(error) {
+    db.save('sloths.txt', {"name":"sloth","cuteness":"x1000000","_id":"KJEA79B939D"}, function(error) {
       assert.deepEqual(error, {"error": "this file already exists!"});
     });
   });

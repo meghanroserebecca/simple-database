@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const simpleid = require('simpleid');
 
 function Db(directory){
     this.directory = directory;
