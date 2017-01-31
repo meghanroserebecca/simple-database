@@ -1,6 +1,6 @@
 var assert = require('assert');
 var run = require('./run.js');
-var DB = require('../lib/index-dir');
+var DB = require('../lib/index-dir.js');
 
 describe('database', function() {
   var db = DB.create('data');

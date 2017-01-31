@@ -1,6 +1,6 @@
 var assert = require('assert');
 var run = require('./run.js');
-var DB = require('../lib/get-dir-contents');
+var DB = require('../lib/index-dir.js');
 
 describe('get directory contents', function() {
   it('gets file contents by id', function(done) {

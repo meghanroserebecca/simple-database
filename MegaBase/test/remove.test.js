@@ -1,6 +1,6 @@
 var assert = require('assert');
 var run = require('./run.js');
-var DB = require('../lib/remove-file-from-dir');
+var DB = require('../lib/index-dir.js');
 var path = require('path');
 
 describe('removes a file from the directory', function() {
